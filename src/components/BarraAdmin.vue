@@ -7,8 +7,10 @@
             <div class="col-md-2 columnaimagen">
                 <img src="https://pelonchas-231194.000webhostapp.com/logoCamion.png" alt="">
             </div>
-            <div class="col-md-2 offset-md-6 columnaboton">
+            <div class="col-md-2 offset-md-8 columnaboton">
                 <button class="btn text-white bg-warning">Cerrar Sesión</button>
+
+                
             </div>
         </div>
       </div>

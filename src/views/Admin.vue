@@ -5,14 +5,14 @@
         <h5>Menú</h5>
         <ul>
             <li  @click="putActive" v-on:click="isActive1 = true"  v-bind:class="{ active: isActive1 }"><a v-bind:class="{ active: isActive1 }" > Usuarios </a></li>
-            <li  @click="putActive" v-on:click="isActive2 = true"  v-bind:class="{ active: isActive2 }"><a v-bind:class="{ active: isActive2 }" > Camiones </a></li>
+            <li  @click="putActive" v-on:click="isActive2 = true"  v-bind:class="{ active: isActive2 }"><a v-bind:class="{ active: isActive2 }" > CamionNuevo </a></li>
             <li  @click="putActive" v-on:click="isActive3 = true"  v-bind:class="{ active: isActive3 }"><a v-bind:class="{ active: isActive3 }" > Sedes </a></li>
             <li  @click="putActive" v-on:click="isActive4 = true"  v-bind:class="{ active: isActive4 }"><a v-bind:class="{ active: isActive4 }" > Reservaciones</a></li>
         </ul>
     </div>
     <div class="contenido ">
          <Usuarios v-if="isActive1"> </Usuarios>
-         <Camiones v-if="isActive2"> </Camiones>
+         <CamionNuevo v-if="isActive2"> </CamionNuevo>
          <Sedes v-if="isActive3"> </Sedes>
          <Reservaciones v-if="isActive4"> </Reservaciones>
         
@@ -28,7 +28,7 @@
 import BarraAdmin from '@/components/BarraAdmin.vue'
 import Sedes from '@/components/Sedes.vue'
 import Usuarios from '@/components/Usuarios.vue'
-import Camiones from '@/components/Camiones.vue'
+import CamionNuevo from '@/components/CamionNuevo.vue'
 import Reservaciones from '@/components/Reservaciones.vue'
 
 
@@ -38,7 +38,7 @@ export default {
     BarraAdmin,
     Sedes,
     Usuarios,
-    Camiones,
+    CamionNuevo,
     Reservaciones,
   },
   data: function () {
