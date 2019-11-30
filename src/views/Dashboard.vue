@@ -2,9 +2,9 @@
   <div style="background: #DAE9FF; height: 1000px;" >
   
     <!--<a href="" @click="logout">Logout</a>-->
-    <Header logIn>
+    <Header logOut>
     </Header>
-    <div class="home">
+    <div class="dashboard">
 
 		<div class="seccion1 mt-5">
 			<div class="formulario">
@@ -34,7 +34,8 @@
 					<div class="row renglon2">
 						<div class="col-md-12 columna2">
 							<!-- <div> AQUI VAN LOS CAMIONES </div> -->
-							<!--<button class="btn btn-success text-white">Reserva</button>-->
+              <button  @click="reserva" class="btn btn-success text-white">Reserva</button>
+
 						</div>
 					</div>
 				</div>
@@ -56,9 +57,8 @@ export default {
       Header
   },
   methods: {
-    logout(){
-      localStorage.clear();
-      this.$router.push({path:'/login'})
+    reserva(){
+      this.$router.push({path:'/dashboard/reserva'})   
     }
   },
 }
@@ -68,15 +68,15 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped >
 /* Bolas de nubes */
-.home .nubes{ position: relative; height: 19vh; }
-.home .nubes img{ width: 100%; }
+.dashboard .nubes{ position: relative; height: 19vh; }
+.dashboard .nubes img{ width: 100%; }
 
 /* SECCION1 - Formulario */
-.home .seccion1 .formulario .contenedor .renglon1 .columna1 h1 { text-align: center; }
-.home .seccion1 .formulario .contenedor .renglon1 .columna1 h4 { text-align: center; color: #424242; margin-bottom: 0; margin-top: 0; }
-.home .seccion1 .formulario .contenedor .renglon1 .columna1 button{ display: block; margin-left: auto; margin-right: auto; margin-top: 20px; }
-.home .seccion2 { margin-top: 200px; }
-.home .seccion2 .formulario .contenedor .renglon1 .columna1 h2 { text-align: center; }
-.home .seccion2 .formulario .contenedor .renglon1 .columna1 h4 { text-align: center; color: #424242;}
+.dashboard .seccion1 .formulario .contenedor .renglon1 .columna1 h1 { text-align: center; }
+.dashboard .seccion1 .formulario .contenedor .renglon1 .columna1 h4 { text-align: center; color: #424242; margin-bottom: 0; margin-top: 0; }
+.dashboard .seccion1 .formulario .contenedor .renglon1 .columna1 button{ display: block; margin-left: auto; margin-right: auto; margin-top: 20px; }
+.dashboard .seccion2 { margin-top: 200px; }
+.dashboard .seccion2 .formulario .contenedor .renglon1 .columna1 h2 { text-align: center; }
+.dashboard .seccion2 .formulario .contenedor .renglon1 .columna1 h4 { text-align: center; color: #424242;}
 
 </style>
