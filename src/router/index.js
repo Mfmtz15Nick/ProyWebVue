@@ -10,6 +10,10 @@ const routes = [
     redirect: '/'
   },
   {
+    path: '/admin',
+    redirect: '/admin/login'
+  },
+  {
     path: '/',
     name: 'home',
     component: Home,
@@ -68,13 +72,13 @@ const routes = [
     component: () => import('../views/Dashboard.vue'),
     meta:{
       requiresAuth: true
-    },
+    }
   },
   // ADMIN
   {
-    path: '/admin',
-    name: 'admin',
-    component: () => import('../views/Admin.vue'),
+    path: '/admin/gestor',
+    name: 'gestor',
+    component: () => import('../views/Admin.vue')
   },
   {
     path: '/admin/login',
@@ -91,29 +95,49 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
 
+
   let isLogged = true;
   let autorizacion = to.matched.some(record => record.meta.requiresAuth);
 
   if(autorizacion && !isLogged){
+    
+  
     return next('/');
   }
   else if(!autorizacion && isLogged ){
+    // Caso éxito
+    
+
     if( to.path === '/dashboard/reserva'){
+      
       return next('/dashboard/reserva');
+
     }
     else if(to.path === '/dashboard/reserva/pago'){
+      
+
       return next('/dashboard/reserva/pago');
     }
     else if(to.path === '/dashboard/reserva/pago/info'){
+      
+
       return next('/dashboard/reserva/pago/info');
     }
+    else if(to.path === '/admin/gestor'){
+      return next('/');
+    }
     else{
+      
+
       return next('/dashboard');
     }
   }
   else{
-    next();
+     next(); 
   }
+
+
+
 
 })
 

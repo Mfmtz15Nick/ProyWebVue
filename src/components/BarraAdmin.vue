@@ -4,8 +4,8 @@
      <nav style="background: #10316B;">
       <div class="container-fluid contenedor">
         <div class="row">
-            <div class="col-md-4 columnaimagen">
-                <img src="img/logoCamion.png" alt="">
+            <div class="col-md-2 columnaimagen">
+                <img src="https://pelonchas-231194.000webhostapp.com/logoCamion.png" alt="">
             </div>
             <div class="col-md-2 offset-md-6 columnaboton">
                 <button class="btn text-white bg-warning">Cerrar Sesión</button>
