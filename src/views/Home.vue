@@ -1,7 +1,6 @@
 <template>
   <div style="background: #DAE9FF; height: 1000px;" >
   
-    <!--<a href="" @click="logout">Logout</a>-->
     <Header logIn>
     </Header>
     <div class="home">

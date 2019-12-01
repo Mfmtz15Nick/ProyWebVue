@@ -94,8 +94,6 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-
-
   let isLogged = false;
   let autorizacion = to.matched.some(record => record.meta.requiresAuth);
 
@@ -106,38 +104,24 @@ router.beforeEach((to, from, next) => {
   }
   else if(!autorizacion && isLogged ){
     // Caso éxito
-    
+    switch(to.path){
 
-    if( to.path === '/dashboard/reserva'){
+      case '/dashboard/reserva':
+          return next('/dashboard/reserva');
+
+      case '/dashboard/reserva/pago':
+          return next('/dashboard/reserva/pago');
       
-      return next('/dashboard/reserva');
+      case '/dashboard/reserva/pago/info':
+          return next('/dashboard/reserva/pago/info');
 
-    }
-    else if(to.path === '/dashboard/reserva/pago'){
-      
-
-      return next('/dashboard/reserva/pago');
-    }
-    else if(to.path === '/dashboard/reserva/pago/info'){
-      
-
-      return next('/dashboard/reserva/pago/info');
-    }
-    else if(to.path === '/admin/gestor'){
-      return next('/');
-    }
-    else{
-      
-
-      return next('/dashboard');
+      default:
+          return next('/dashboard');
     }
   }
   else{
      next(); 
   }
-
-
-
 
 })
 
