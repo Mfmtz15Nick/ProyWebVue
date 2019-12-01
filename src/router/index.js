@@ -94,7 +94,7 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  let isLogged = false;
+  let isLogged =  localStorage.getItem("token");
   let autorizacion = to.matched.some(record => record.meta.requiresAuth);
 
   if(autorizacion && !isLogged){

@@ -33,7 +33,10 @@
           <small>Escriba su contraseña.</small>
 
           <input class="btn space40 btn-block btn-primary" type="submit" value="Acceder" />
-          {{respuesta}}
+          <div  v-if="seen" class="mt-3 spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <h6 class="text-primary">{{respuesta}}</h6>
         </form>
       </div>
     </div>
@@ -49,7 +52,8 @@ export default {
     return {
       usuario: "",
       contrasena: "",
-      respuesta: ""
+      respuesta: "",
+      seen:false,
     };
   },
    components: {
@@ -57,16 +61,25 @@ export default {
   },
   methods: {
     login() {
+      this.seen = true;
       axios
-        .post("http://167.99.157.165/cliente/login", {
+        .post("http://167.99.157.165/chofer/login", {
           correoElectronico: this.usuario,
           password: this.contrasena          
 
         })
         .then(response => {
           this.respuesta = response.data;
-          //this.$router.push({path:'/home'})
-         
+
+          localStorage.setItem('token', response.data.token);
+          localStorage.setItem('nombre', response.data.nombre);
+
+          this.$router.push({path:'/dashboard'})
+          this.seen = false;
+
+
+
+         /*
           const token = response.data.token;
           let nombre = response.data.nombre;
           let rol = response.data.rol;
@@ -74,10 +87,12 @@ export default {
           localStorage.setItem('nombre', nombre);
           localStorage.setItem('rol', rol);
           window.location.replace('/user');
-
+          this.respuesta = response;
+          */
         })
         .catch(e => {
           this.respuesta = e;
+          this.seen = false;
           
         });
     }

@@ -37,10 +37,10 @@
                 </div>
             </div>
              <div class="mt-3 col-md-7 columna-input">
-                <button  @click="info" class="btn bg-primary text-white mt-3">Pagar</button>
-                    <div class="mt-3 spinner-border text-primary" role="status">
-                        <span class="sr-only">Loading...</span>
-                    </div>
+                <div v-if="seen" class="mt-3 spinner-border text-primary" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <button v-else  @click="info" class="btn bg-primary text-white mt-3">Pagar</button>
             </div>
         </div>
     </div>
@@ -56,13 +56,13 @@ export default {
   },
   methods: {
     info() {
-      localStorage.clear();
       this.$router.push({ path: "/dashboard/reserva/pago/info" });
     }
   },
   data: function () {
     return {
-        selected:''
+        selected:'',
+        seen: false
     }
   },
 };

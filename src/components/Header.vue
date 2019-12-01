@@ -23,7 +23,7 @@
                         <div  v-if="logOut " class="col-md-2 col2 ">
                             <button  @click="logout"  class="btn nito"> Cerrar Sesión</button>						</div>
                         <div  v-if="logOut " class="col-md-2 col2 ">
-							<h6 class="nito" > Mario Fonseca  </h6>
+							<h6 class="nito" > {{nombreUsuario}}  </h6>
 						</div>
 					</div>
 				</div>
@@ -61,6 +61,10 @@ export default {
     },
     registrar(){
       this.$router.push({path:'/registro'})
+    },
+    logout(){
+      localStorage.clear();
+      this.$router.push({path:'/'})
     }
 
   },
@@ -68,6 +72,7 @@ export default {
       logIn: Boolean,
       regresarnl: Boolean,
       logOut: Boolean,
+      nombreUsuario: String
       },
 }
 

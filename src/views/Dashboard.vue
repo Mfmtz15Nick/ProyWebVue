@@ -2,7 +2,7 @@
   <div style="background: #DAE9FF; height: 1000px;" >
   
     <!--<a href="" @click="logout">Logout</a>-->
-    <Header logOut>
+    <Header logOut v-bind:nombreUsuario="nombre">
     </Header>
     <div class="dashboard">
 
@@ -55,6 +55,11 @@ export default {
   name: 'home',
   components: {
       Header
+  },
+  data() {
+    return {
+      nombre: localStorage.getItem("nombre")
+    };
   },
   methods: {
     reserva(){

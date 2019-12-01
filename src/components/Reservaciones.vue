@@ -12,6 +12,11 @@ export default {
   props: {
     msg: String
   },
+  data() {
+    return {
+      seen:false,
+    };
+  },
   methods: {
     logout(){
       localStorage.clear();
