@@ -6,7 +6,6 @@
       <th scope="col">Alias</th>
       <th scope="col">Ciudad</th>
       <th scope="col">Estado</th>
-      <th scope="col">Pertenece</th>
     </tr>
   </thead>
   <tbody>
@@ -14,11 +13,6 @@
             <th scope="row">{{sede.alias}}</th>
             <td>{{sede.ciudad}}</td>
             <td>{{sede.estado}}</td>
-            <td>{{sede.sedePadre? sede.sedePadre : '-'}}</td>
-            <!-- <td>
-                            <button type="button" class="btn btn-primary">Editar</button>
-                            <button style="margin-left: 10px" type="button" class="btn btn-danger">Eliminar</button>
-            </td>-->
           </tr>
   </tbody>
 </table>

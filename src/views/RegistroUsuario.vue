@@ -123,9 +123,7 @@ export default {
   methods: {
     async codigo() {
       this.loading = true;
-      //alert(this.nombre+''+this.primerApellido+''+this.segundoApellido+''+this.correoElectronico+''+this.telefono+''+this.direccion)
-      axios
-        //.post("http://167.99.157.165/prospecto/registro", {
+  axios
         .post("http://www.proyweb.com.mx/prospecto/registro", {
               nombre: this.nombre,
               primerApellido: this.primerApellido,

@@ -62,7 +62,7 @@ export default {
 </script>
 <style  scoped>
 
-.section { width: 260px; background-color: #FFF; height: calc(100vh - 78px); position: relative; }
+.section { width: 260px; background-color: #FFF; height: calc(100vh - 87px); position: relative; }
 .section h5 { padding: 22px; padding-bottom: 3px; }
 .section ul { padding: 0; margin: 0; }
 .section ul li { height: 45px; cursor: pointer; list-style: none; padding: 0; margin: 0; padding-left: 25px; display: flex; align-items: center; border-top-right-radius: 7px;border-bottom-right-radius: 7px;}

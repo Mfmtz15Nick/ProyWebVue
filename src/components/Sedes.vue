@@ -2,7 +2,10 @@
   <div >
    <div class="container-fluid ">
      <div class="row pb-3 d-flex justify-content-end">
-       <div class="col-md-12 d-flex justify-content-end">
+   <div class="col-md-2">
+         <h2>Sedes</h2>
+       </div>
+       <div class="col-md-9 d-flex justify-content-end">
        <button  @click="nuevoC" v-if='listado' class="btn text-white nito bg-success pl-4 pr-4 ">Nuevo</button>
         <div v-if='nuevo'>
            <button  @click="regresar"  class="btn text-white nito bg-danger pl-4 pr-4 mr-3 ">Regresar</button>
@@ -15,7 +18,7 @@
      <div class="row">
        <div class="col-md-12">
       <ListadoSedes v-if='listado' regresarnl />
-      <CamionNuevo v-if='nuevo' regresarnl />
+      <SedeNuevo v-if='nuevo' regresarnl />
 
        </div>
 
@@ -27,7 +30,7 @@
 
 <script>
 import ListadoSedes  from '@/components/ListadoSedes.vue'
-import CamionNuevo  from '@/components/CamionNuevo.vue'
+import SedeNuevo  from '@/components/SedeNuevo.vue'
 
 export default {
   name: 'Sedes',
@@ -36,7 +39,7 @@ export default {
   },
   components: {
     ListadoSedes,
-    CamionNuevo
+    SedeNuevo
   },
    data: function () {
     return {
