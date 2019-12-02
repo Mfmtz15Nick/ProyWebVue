@@ -17,7 +17,7 @@
               </div>
               <div class="col-md-2 columna2">
                 <input
-                  v-model="codigo"
+                  v-model="codigoVerificacion"
                   type="text"
                   class="form-control"
                   placeholder="Codigo"
@@ -57,7 +57,7 @@ export default {
       this.loading = true;
       axios
         .post("http://www.proyweb.com.mx/prospecto/verificar", {
-          codigoVerificacion: this.codigoVerificacion
+            codigoVerificacion: this.codigoVerificacion
         })
         .then(response => {
           this.respuesta = response.data;

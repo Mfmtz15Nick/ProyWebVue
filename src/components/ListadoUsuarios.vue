@@ -1,6 +1,5 @@
 <template>
   <div class="listado">
-    <p> {{c}} </p>
     <table class="table table-striped">
       <thead>
         <tr>
@@ -44,7 +43,8 @@ export default {
   data() {
     return {
       users: [],
-      c:''
+      c: "",
+      acep: false
     };
   },
   methods: {
@@ -59,15 +59,16 @@ export default {
           this.c2 = e;
         });
     },
-    aprobacionCliente: function(id, aceptado) {
-      alert(id + " y aparte es" + aceptado);
+    aprobacionCliente: function(id, aceptadoo) {
+      this.acep = aceptadoo;
       axios
-        .post("http://proyweb.com.mx/cliente/registro", {
+        .post("http://www.proyweb.com.mx/cliente/registro", {
           prospectoId: id,
-          aceptado: aceptado
+          aceptado: this.acep
         })
         .then(response => {
           this.c = response.data;
+          
         })
         .catch(e => {
           this.c = e;

@@ -109,8 +109,11 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   let isLogged =  localStorage.getItem("token");
- // let isLogged =  localStorage.getItem("token");
   let autorizacion = to.matched.some(record => record.meta.requiresAuth);
+
+  if(from.path == '/dashboard/reserva/pago/info' && to.path=='/dashboard/reserva/pago' ){
+    next('/');
+  }
 
   if(autorizacion && !isLogged){
     

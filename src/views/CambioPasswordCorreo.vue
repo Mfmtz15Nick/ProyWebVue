@@ -16,6 +16,7 @@
               </div>
               <div class="col-md-3 columna2">
                   <input
+                  v-model="correo"
                   type="text"
                   class="form-control"
                   placeholder="Correo Electrónico"
@@ -46,9 +47,10 @@ export default {
   },
   methods: {
     parametro() {
+      alert(this.correo)
       this.loading = true;
       axios
-        .post("http://proyweb.com.mx/usuario/olvidopassword", {
+        .post("http://www.proyweb.com.mx/usuario/olvidopassword", {
           correoElectronico: this.correo,     
         })
         .then(response => {
