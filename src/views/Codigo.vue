@@ -56,7 +56,7 @@ export default {
     mandar() {
       this.loading = true;
       axios
-        .post("http://proyweb.com.mx/prospecto/verificardd", {
+        .post("http://www.proyweb.com.mx/prospecto/verificar", {
           codigoVerificacion: this.codigoVerificacion
         })
         .then(response => {

@@ -38,7 +38,6 @@
           <div  v-if="seen" class="mt-3 spinner-border text-primary" role="status">
             <span class="sr-only">Loading...</span>
           </div>
-          <h6 class="text-primary">{{respuesta}}</h6>
         </form>
       </div>
     </div>
@@ -66,7 +65,7 @@ export default {
     login() {
       this.seen = true;
       axios
-        .post("http://proyweb.com.mx/chofer/login", {
+        .post("http://www.proyweb.com.mx/cliente/login", {
           correoElectronico: this.usuario,
           password: this.contrasena          
 

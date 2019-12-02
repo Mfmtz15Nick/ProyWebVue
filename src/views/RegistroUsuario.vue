@@ -121,18 +121,21 @@ export default {
   },
 
   methods: {
-    codigo() {
+    async codigo() {
       this.loading = true;
+      //alert(this.nombre+''+this.primerApellido+''+this.segundoApellido+''+this.correoElectronico+''+this.telefono+''+this.direccion)
       axios
-        .post("http://proyweb.com.mx/prospecto/registro", {
-          nombre: this.nombre,
-          primerApellido: this.primerApellido,
-          segundoApellido: this.segundoApellido,
-          correoElectronico: this.correoElectronico,     
-          telefono: this.telefono,
-          direccion: this.direccion,
+        //.post("http://167.99.157.165/prospecto/registro", {
+        .post("http://www.proyweb.com.mx/prospecto/registro", {
+              nombre: this.nombre,
+              primerApellido: this.primerApellido,
+              segundoApellido: this.segundoApellido,
+              correoElectronico: this.correoElectronico,
+              telefono: this.telefono,
+              direccion: this.direccion
         })
         .then(response => {
+          alert('jalo el post')
           this.respuesta = response.data;
           this.loading = false;
           this.$router.push({ path: "/registro/codigo" });
@@ -141,6 +144,7 @@ export default {
         .catch(e => {
           this.respuesta = e;
           this.loading = false;
+          alert("hay error"+ e)
           
         });
      
