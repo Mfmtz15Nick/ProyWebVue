@@ -47,7 +47,6 @@ export default {
   },
   methods: {
     parametro() {
-      alert(this.correo)
       this.loading = true;
       axios
         .post("http://www.proyweb.com.mx/usuario/olvidopassword", {

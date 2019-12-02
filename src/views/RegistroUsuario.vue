@@ -133,7 +133,6 @@ export default {
               direccion: this.direccion
         })
         .then(response => {
-          alert('jalo el post')
           this.respuesta = response.data;
           this.loading = false;
           this.$router.push({ path: "/registro/codigo" });
@@ -142,7 +141,6 @@ export default {
         .catch(e => {
           this.respuesta = e;
           this.loading = false;
-          alert("hay error"+ e)
           
         });
      

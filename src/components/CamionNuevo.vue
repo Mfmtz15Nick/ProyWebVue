@@ -122,7 +122,6 @@ export default {
         });
     },
     postCamiones: function() {
-      alert(this.kilometraje+" "+this.kilometrajeUltimoServicio+" "+this.capacidadPeso+" "+this.tipoCamion+" "+this.tipoCombustible+" "+this.volumen+" "+this.placas)
       axios
         .post("http://www.proyweb.com.mx/api/camion", {
             kilometraje: this.kilometraje,
@@ -134,14 +133,12 @@ export default {
             placas: this.placas
         })
         .then(response => {
-          alert("jalo el post");
           this.respuesta = response.data;
           this.loading = false;
         })
         .catch(e => {
           this.respuesta = e;
           this.loading = false;
-          alert("hay error" + e);
         });
     }
   },

@@ -126,7 +126,6 @@ export default {
           pertenece: 1
         })
         .then(response => {
-            alert("jalo el post");
             this.respuesta = response.data;
             this.loading = false;
             this.alias = ''
@@ -139,7 +138,6 @@ export default {
         .catch(e => {
           this.respuesta = e;
           this.loading = false;
-          alert("hay error" + e);
         });
     },
     getCamiones: function() {

@@ -13,7 +13,7 @@
 							<h1><strong>Somos tu solución en renta de transportes</strong></h1>
 							<br><br>
 							<h4>Reserva tu servicio de transporte sin compromiso</h4>
-							<button class="btn bg-warning text-white btn-lg">Reservar</button>
+							<button @click="logout" class="btn bg-warning text-white btn-lg">Reservar</button>
 						</div>
 					</div>
 				</div>
@@ -64,7 +64,7 @@
 								<div class="col-md-12 columna1">
 									<h1><strong>¿Estás listo?</strong></h1>
 									<h4>Reserva <strong>ahora</strong></h4>
-									<button class="btn bg-warning text-white btn-lg">Reservar</button>
+									<button @click="logout" class="btn bg-warning text-white btn-lg">Reservar</button>
 								</div>
 							</div>
 						</div>
@@ -92,7 +92,6 @@ export default {
   },
   methods: {
     logout(){
-      localStorage.clear();
       this.$router.push({path:'/login'})
     }
   },

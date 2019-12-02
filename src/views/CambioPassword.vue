@@ -71,7 +71,6 @@ export default {
       this.$router.push({ path: "/login" });
     },
     parametro() {
-      //alert(window.location.href)
       this.loading = true;
       var query = window.location.search.substring(1);
       var vars = query.split("&");
