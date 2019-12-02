@@ -10,37 +10,73 @@
 				<div class="container-fluid contenedor">
 					<div class="row renglon1">
 						<div class="col-md-12 columna1">
-							<h1>Sómos tu solución en renta</h1>
-							<h1>de transportes</h1> <br><br>
-							<h4>Reserva tu servicio de transporte sin</h4>
-							<h4>compromiso</h4>
-							<!--<button class="btn bg-warning text-white">Reservar</button>-->
+							<h1><strong>Somos tu solución en renta de transportes</strong></h1>
+							<br><br>
+							<h4>Reserva tu servicio de transporte sin compromiso</h4>
+							<button class="btn bg-warning text-white btn-lg">Reservar</button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="seccion2">
+		<div class="seccion2 mt-5">
 			<div class="formulario">
 				<div class="container-fluid contenedor">
 					<div class="row renglon1">
-						<div class="col-md-12 columna1">
-							<h2>Manejamos tres tamaños de camión</h2>
-							<h4>Utiliza el tamaño que más se acomode a tus</h4>
-							<h4>necesidades</h4>
+						<div class="col-md-6 columna1">
+							<img  style="width: 100%" src="../../public/img/nubeCamion.png">
+						</div>
+						<div style="height: 100%" class="col-md-6 columna2">
+							<div style="margin: auto; margin-left:-20%; margin-top:30%">
+							<h1><strong>Nuestra misión</strong></h1>
+							<h4>Brindarte el mejor servicio de mudanza de todo méxico</h4> 
+							</div>
 						</div>
 					</div>
-					<div class="row renglon2">
-						<div class="col-md-12 columna2">
-							<!-- <div> AQUI VAN LOS CAMIONES </div> -->
-							<!--<button class="btn btn-success text-white">Reserva</button>-->
+				<div class="seccion3 mt-5">
+					<div class="formulario">
+						<div class="container-fluid contenedor">
+							<div class="row renglon1">
+								<div class="col-md-12 columna1">
+									<h1><strong>¿No sabes como?</strong></h1>
+									<h4>No te preocupes, nosotros lo hacemos <strong>fácil</strong> para ti</h4>
+								</div>
+							</div>
 						</div>
 					</div>
+				</div>
+				<div class="seccion4 mt-4">
+					<div class="formulario">
+						<div class="container-fluid contenedor">
+							<div class="row renglon1">
+								<div class="col-md-12 columna1">
+									<img  style="width: 70%" src="../../public/img/pasos.png">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<br><br>
+				<div class="seccion5 mt-5">
+					<div class="formulario">
+						<div class="container-fluid contenedor">
+							<div class="row renglon1">
+								<div class="col-md-12 columna1">
+									<h1><strong>¿Estás listo?</strong></h1>
+									<h4>Reserva <strong>ahora</strong></h4>
+									<button class="btn bg-warning text-white btn-lg">Reservar</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<footer style="min-width:100%; max-width:100%; margin:0px; padding:0px;">
+					<img  style="width: 100%" src="../../public/img/footer.png">
+				</footer>
 				</div>
 			</div>
 		</div>
 	</div>
-
 
   
 
