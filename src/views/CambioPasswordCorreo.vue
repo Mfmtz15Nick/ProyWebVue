@@ -59,7 +59,7 @@ export default {
         })
         .catch(e => {
           this.respuesta = e;
-          this.$router.push({path:'/'})
+          //this.$router.push({path:'/'})
           this.loading = false;
 
           

@@ -14,18 +14,21 @@
                 </p>
                 <br />
                 <br />
-                
               </div>
               <div class="col-md-2 columna2">
-                  <input
+                <input
+                  v-model="codigo"
                   type="text"
                   class="form-control"
                   placeholder="Codigo"
                   aria-label="Codigo"
                   aria-describedby="addon-wrapping"
                 />
-                <br>
-                <button class="btn bg-success btn-block text-white nito ">Code</button>
+                <br />
+                <div v-if="loading" class="mt-3 spinner-border text-primary" role="status">
+                  <span class="sr-only">Loading...</span>
+                </div>
+                <button @click="mandar" v-else class="btn bg-success btn-block text-white nito">Code</button>
               </div>
             </div>
           </div>
@@ -36,16 +39,35 @@
 </template>
 
 <script>
+const axios = require("axios");
 import Header from "@/components/Header.vue";
 export default {
   name: "codigo",
   components: {
     Header
   },
+  data() {
+    return {
+      codigoVerificacion: "",
+      loading: false
+    };
+  },
   methods: {
-    logout() {
-      localStorage.clear();
-      this.$router.push({ path: "/login" });
+    mandar() {
+      this.loading = true;
+      axios
+        .post("http://proyweb.com.mx/prospecto/verificardd", {
+          codigoVerificacion: this.codigoVerificacion
+        })
+        .then(response => {
+          this.respuesta = response.data;
+          this.loading = false;
+          this.$router.push({ path: "/" });
+        })
+        .catch(e => {
+          this.respuesta = e;
+          this.loading = false;
+        });
     }
   }
 };
@@ -61,8 +83,8 @@ export default {
 .inicio .nubes img {
   width: 100%;
 }
-.row{
-    justify-content: center;
+.row {
+  justify-content: center;
 }
 
 /* SECCION1 - Formulario */

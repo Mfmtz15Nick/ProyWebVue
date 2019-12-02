@@ -32,6 +32,8 @@
           />
           <small>Escriba su contraseña.</small>
 
+          <a @click="olvide"><p style="color:black; cursor:pointer; font-weight:bold; ">Olvidé la contraseña</p></a>
+
           <input class="btn space40 btn-block btn-primary" type="submit" value="Acceder" />
           <div  v-if="seen" class="mt-3 spinner-border text-primary" role="status">
             <span class="sr-only">Loading...</span>
@@ -60,10 +62,11 @@ export default {
     Header 
   },
   methods: {
+    
     login() {
       this.seen = true;
       axios
-        .post("http://167.99.157.165/chofer/login", {
+        .post("http://proyweb.com.mx/chofer/login", {
           correoElectronico: this.usuario,
           password: this.contrasena          
 
@@ -83,7 +86,9 @@ export default {
           this.seen = false;
           
         });
-    }
+    },
+    olvide(){
+          this.$router.push({path:'/cambiopasscorreo'})    }
   }
 };
 </script>

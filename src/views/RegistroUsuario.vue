@@ -15,6 +15,7 @@
         <div class="row renglon2">
           <div class="col-md-6 columna2">
             <input
+              v-model="nombre"
               type="text"
               class="form-control"
               placeholder="Nombre"
@@ -26,6 +27,7 @@
             <div class="row">
               <div class="col-md-6">
                 <input
+                  v-model="primerApellido"
                   type="text"
                   class="space40 form-control"
                   placeholder="Primer Apellido"
@@ -36,6 +38,7 @@
               </div>
               <div class="col-md-6">
                 <input
+                  v-model="segundoApellido"
                   type="text"
                   class="space40 form-control"
                   placeholder="Segundo Apellido"
@@ -49,6 +52,7 @@
             <div class="row">
               <div class="col-md-6">
                 <input
+                  v-model="correoElectronico"
                   type="text"
                   class="space40 form-control"
                   placeholder="Correo"
@@ -59,6 +63,7 @@
               </div>
               <div class="col-md-6">
                 <input
+                v-model="telefono"
                   type="text"
                   class="space40 form-control"
                   placeholder="Telefono"
@@ -70,6 +75,7 @@
             </div>
             <br />
             <input
+              v-model="direccion"
               type="text"
               class="form-control"
               placeholder="Direccion"
@@ -80,8 +86,10 @@
 
             <br />
             <br />
-
-            <button  @click="codigo" class="btn space40 btn-block">Registrar</button>
+            <div v-if="loading" class="mt-3 spinner-border text-primary" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <button v-else @click="codigo" class="btn space40 btn-block">Registrar</button>
           </div>
         </div>
       </div>
@@ -90,6 +98,8 @@
 </template>
 
 <script>
+const axios = require("axios");
+
 // @ is an alias to /src
 import Header from "@/components/Header.vue";
 
@@ -98,11 +108,44 @@ export default {
   components: {
     Header
   },
-  methods: {
-    codigo(){
-      this.$router.push({path:'/registro/codigo'})
-    }
+  data() {
+    return {
+      loading:false,
+      nombre: "",
+      primerApellido: "",
+      segundoApellido: "",
+      correoElectronico: "",
+      telefono: "",
+      direccion: ""
+    };
   },
+
+  methods: {
+    codigo() {
+      this.loading = true;
+      axios
+        .post("http://proyweb.com.mx/prospecto/registro", {
+          nombre: this.nombre,
+          primerApellido: this.primerApellido,
+          segundoApellido: this.segundoApellido,
+          correoElectronico: this.correoElectronico,     
+          telefono: this.telefono,
+          direccion: this.direccion,
+        })
+        .then(response => {
+          this.respuesta = response.data;
+          this.loading = false;
+          this.$router.push({ path: "/registro/codigo" });
+
+        })
+        .catch(e => {
+          this.respuesta = e;
+          this.loading = false;
+          
+        });
+     
+    }
+  }
 };
 </script>
 <style scoped>
@@ -121,6 +164,14 @@ export default {
   justify-content: center;
   display: flex;
 }
-small { display: block; text-align: left; color:black; }
-.btn {background: #10316B; color: white; font-weight: bold;}
+small {
+  display: block;
+  text-align: left;
+  color: black;
+}
+.btn {
+  background: #10316b;
+  color: white;
+  font-weight: bold;
+}
 </style>

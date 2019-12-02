@@ -10,10 +10,10 @@
       </thead>
       <tbody>
         <tr v-for="reservacion in reservaciones" :key="reservacion.id">
-                          <th scope="row">{{reservacion.folio}}</th>
-                          <td>{{reservacion.tipoCamion}}</td>
-                          <td>{{reservacion.fechaReservacion}}</td>
-                        </tr>
+          <th scope="row">{{reservacion.folio}}</th>
+          <td>{{reservacion.tipoCamion}}</td>
+          <td>{{reservacion.fechaReservacion}}</td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -57,7 +57,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped >
 .listado {
-    height: 70vh;
+  height: 70vh;
   overflow-y: scroll;
 }
 </style>
