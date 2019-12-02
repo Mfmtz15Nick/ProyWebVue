@@ -77,18 +77,6 @@ export default {
           this.$router.push({path:'/dashboard'})
           this.seen = false;
 
-
-
-         /*
-          const token = response.data.token;
-          let nombre = response.data.nombre;
-          let rol = response.data.rol;
-          localStorage.setItem('token', token);
-          localStorage.setItem('nombre', nombre);
-          localStorage.setItem('rol', rol);
-          window.location.replace('/user');
-          this.respuesta = response;
-          */
         })
         .catch(e => {
           this.respuesta = e;

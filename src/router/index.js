@@ -10,6 +10,10 @@ const routes = [
     redirect: '/'
   },
   {
+    path: '/cambiopass?*',
+    redirect: '/cambiopass'
+  },
+  {
     path: '/admin',
     redirect: '/admin/login'
   },
@@ -37,6 +41,16 @@ const routes = [
     path: '/registro/codigo',
     name: 'codigo',
     component: () => import('../views/Codigo.vue')
+  },
+  {
+    path: '/cambiopass',
+    name: 'cambiopass',
+    component: () => import('../views/CambioPassword.vue')
+  },
+  {
+    path: '/cambiopasscorreo',
+    name: 'cambiopasscorreo',
+    component: () => import('../views/CambioPasswordCorreo.vue')
   },
   {
     path: '/dashboard/reserva',
@@ -96,7 +110,11 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   let isLogged =  localStorage.getItem("token");
   let autorizacion = to.matched.some(record => record.meta.requiresAuth);
+/*
+  if(to.path == '/cambiopass'){
 
+  }
+*/
   if(autorizacion && !isLogged){
     
   

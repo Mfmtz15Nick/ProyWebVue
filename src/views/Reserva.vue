@@ -26,15 +26,6 @@
               >{{ ciudad.ciudad }}</option>
             </select>
             <small>Ciudad origen.</small>
-
-            <!--<select @click="getCamiones" class="form-control" v-model="selected">
-              <option disabled value>Selecciona ciudad origen</option>
-              <option>Navolato</option>
-              <option>Cualiacán</option>
-              <option>Guasave</option>
-            </select>
-            <small>Ciudad origen.</small>-->
-            <!--<span>Selected: {{ selected }}</span>-->
           </div>
           <div class="col-md-6">
              <select class="form-control" v-model="sedeDestino">
