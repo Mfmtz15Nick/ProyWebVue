@@ -17,7 +17,7 @@
               </div>
               <div class="col-md-3 columna2">
                 <input
-                  type="text"
+                  type="password"
                   class="form-control"
                   placeholder="Contraseña"
                   aria-label="Codigo"
@@ -26,7 +26,7 @@
 
                 <br />
                 <input
-                  type="text"
+                  type="password"
                   class="form-control"
                   placeholder="Confirmar la contraseña"
                   aria-label="Codigo"
