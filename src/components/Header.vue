@@ -7,7 +7,10 @@
 			<div class="contenido container-fluid">
 				<div class="row">
 					<div class="col-md-2 col1 ">
-						<img src="https://pelonchas-231194.000webhostapp.com/logoNav.png" alt="">
+              <a style="cursor:pointer;" @click="regresar">
+						<img  src="https://pelonchas-231194.000webhostapp.com/logoNav.png" alt="">
+
+              </a>
 					</div>
 					<div class="derecha col-md-10 ">
 						<div  v-if="regresarnl" class="col-md-2 col2 ">
