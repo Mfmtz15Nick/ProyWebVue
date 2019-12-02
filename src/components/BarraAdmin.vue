@@ -8,7 +8,7 @@
                 <img src="https://pelonchas-231194.000webhostapp.com/logoCamion.png" alt="">
             </div>
             <div class="col-md-2 offset-md-8 columnaboton">
-                <button class="btn text-white bg-warning">Cerrar Sesión</button>
+                <button  @click="logout" class="btn text-white bg-warning">Cerrar Sesión</button>
 
                 
             </div>
@@ -32,14 +32,8 @@ export default {
   methods: {
     logout(){
       localStorage.clear();
-      this.$router.push({path:'/login'})
+      this.$router.push({path:'/admin'})
 	},
-	mandarLog(){
-		this.$router.push({path:'/login'})
-	},
-	registrar(){
-		this.$router.push({path:'/registro'})
-	}
   },
 }
 </script>
