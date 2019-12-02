@@ -1,27 +1,28 @@
-<template>
-  <div class="listado" >
+<template >
+  <div class="listado">
     <table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Alias</th>
-      <th scope="col">Ciudad</th>
-      <th scope="col">Estado</th>
-      <th scope="col">Pertenece</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr v-for="sede in sedes" :key="sede.id">
-            <th scope="row">{{sede.alias}}</th>
-            <td>{{sede.ciudad}}</td>
-            <td>{{sede.estado}}</td>
-            <td>{{sede.sedePadre? sede.sedePadre : '-'}}</td>
-            <!-- <td>
+      <thead class>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Tipo Camión</th>
+          <th scope="col">Tipo Combustible</th>
+          <th scope="col">Placas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="camion in camiones" :key="camion.id">
+          <th scope="row">{{camion.id}}</th>
+          <td>{{camion.tipoCamion}}</td>
+          <td>{{camion.tipoCombustible}}</td>
+          <td>{{camion.placas}}</td>
+          <!-- <td>
                             <button type="button" class="btn btn-primary">Editar</button>
                             <button style="margin-left: 10px" type="button" class="btn btn-danger">Eliminar</button>
-            </td>-->
-          </tr>
-  </tbody>
-</table>
+                          </td>
+          -->
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
@@ -30,15 +31,15 @@ const axios = require("axios");
 
 export default {
   beforeMount() {
-    this.getSedes();
+    this.getCamiones();
   },
-  name: "Sedes",
+  name: "Camiones",
   props: {
     msg: String
   },
   data() {
     return {
-      sedes: []
+      camiones: []
     };
   },
   methods: {
@@ -46,11 +47,11 @@ export default {
       localStorage.clear();
       this.$router.push({ path: "/login" });
     },
-    getSedes: function() {
+    getCamiones: function() {
       axios
-        .get("http://www.proyweb.com.mx/api/sede")
+        .get("http://www.proyweb.com.mx/api/camion")
         .then(response => {
-          this.sedes = response.data;
+          this.camiones = response.data;
           this.c = response.data;
         })
         .catch(e => {

@@ -17,7 +17,7 @@
      </div>
      <div class="row">
        <div class="col-md-12">
-      <ListadoSedes v-if='listado' regresarnl />
+      <ListadoCamiones v-if='listado' regresarnl />
       <CamionNuevo v-if='nuevo' regresarnl />
 
        </div>
@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import ListadoSedes  from '@/components/ListadoSedes.vue'
+import ListadoCamiones  from '@/components/ListadoCamiones.vue'
 import CamionNuevo  from '@/components/CamionNuevo.vue'
 
 export default {
@@ -38,7 +38,7 @@ export default {
     msg: String
   },
   components: {
-    ListadoSedes,
+    ListadoCamiones,
     CamionNuevo
   },
    data: function () {
