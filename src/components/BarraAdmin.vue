@@ -48,7 +48,7 @@ export default {
 <style scoped>
  nav img { width: 80px; padding: 5px; }
  nav .contenedor .row .columnaboton { display: flex; justify-content: center; align-items: center; }
-
+.columnaboton { display: flex; justify-content: center; align-items: center; }
 
 .nito{font-weight: bold;}
 </style>
